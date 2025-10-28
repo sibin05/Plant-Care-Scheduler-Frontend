@@ -1,0 +1,24 @@
+.plant-list {
+  padding: 2rem;
+}
+
+.plant-card {
+  border: 1px solid #ddd;
+  padding: 1rem;
+  margin-bottom: 2rem;
+  border-radius: 8px;
+  background-color: #f9fff9;
+}
+
+.plant-card h2 {
+  margin-bottom: 0.5rem;
+}
+
+.status {
+  font-size: 0.9rem;
+  color: green;
+}
+
+ul {
+  padding-left: 1.5rem;
+}

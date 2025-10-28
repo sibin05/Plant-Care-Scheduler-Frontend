@@ -1,0 +1,136 @@
+/* Global Reset & Base */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", "Inter", sans-serif;
+}
+body {
+  background: linear-gradient(135deg, #e9f7ea 0%, #d2eef2 100%);
+  color: #2f4858;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Login/Register Card */
+.auth-container {
+  display: flex;
+  width: 1250px;
+  height: 530px;
+  background: #ffffff;
+  border-radius: 16px;
+  overflow: hidden;
+  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+  position: relative; /* for absolute child positioning */
+}
+
+/* Left Panel (Imagery) */
+.auth-image {
+  flex: 1;
+  background: url("../assets/plant-login.jpg") no-repeat center center/cover;
+  position: relative;
+}
+
+/* Title on Top Center */
+.auth-image::after {
+  position: absolute;
+  top: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  color: #0c2316;
+  font-size: 28px;
+  font-weight: 700;
+  white-space: nowrap;
+  text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Right Panel (Form) */
+.auth-form {
+  flex: 1;
+  padding: 60px 50px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: stretch;
+}
+.auth-form h2 {
+  margin-bottom: 24px;
+  color: #376b53;
+  font-size: 32px;
+  font-weight: 700;
+  text-align: center;
+}
+
+/* Inputs */
+.auth-form input {
+  display: block;
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 20px;
+  border: 1px solid #cdece0;
+  border-radius: 8px;
+  font-size: 16px;
+  outline: none;
+  transition: border-color 0.3s;
+}
+.auth-form input:focus {
+  border-color: #376b53;
+}
+
+/* Button */
+.auth-form button {
+  width: 100%;
+  padding: 14px;
+  background: linear-gradient(90deg, #376b53, #52b788);
+  color: #fff;
+  font-size: 17px;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+  font-weight: 600;
+  transition: background 0.3s;
+}
+.auth-form button:hover {
+  background: linear-gradient(90deg, #2b583f, #3e805c);
+}
+
+/* Link (Switch to Register/Login) */
+.auth-form p {
+  margin-top: 18px;
+  font-size: 14px;
+  color: #5a5a5a;
+  text-align: center;
+}
+.auth-form a {
+  color: #376b53;
+  text-decoration: none;
+  font-weight: 500;
+}
+.auth-form a:hover {
+  text-decoration: underline;
+}
+
+/* Options Row (Remember + Forgot) */
+.auth-options {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 18px;
+  font-size: 14px;
+  width: 100%;
+}
+
+/* Keep checkbox + text in one line */
+.auth-options label {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  white-space: nowrap;  /* prevents wrapping */
+  color: #376b53;
+}
+
+.auth-options input[type="checkbox"] {
+  margin: 0;   /* remove extra spacing */
+}
