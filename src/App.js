@@ -25,6 +25,9 @@ import Contact from "./components/Contact";
 import Features from "./components/Features";
 import About from "./components/About";
 import NotificationSystem from "./components/NotificationSystem";
+import AdminDashboard from "./components/admin/AdminDashboard";
+import AdminLogin from "./components/admin/AdminLogin";
+import AdminGuide from "./components/admin/AdminGuide";
 
 // Simple protected route wrapper
 const PrivateRoute = ({ children }) => {
@@ -63,6 +66,18 @@ const App = () => {
         <Route
           path="/dashboard"
           element={<Dashboard/>}
+        />
+
+        {/* Admin Routes */}
+        <Route path="/admin-guide" element={<AdminGuide />} />
+        <Route path="/admin-login" element={<AdminLogin />} />
+        <Route
+          path="/admin"
+          element={
+            <PrivateRoute>
+              <AdminDashboard />
+            </PrivateRoute>
+          }
         />
 
         {/* Plants */}

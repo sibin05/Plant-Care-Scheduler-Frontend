@@ -12,6 +12,7 @@ import PlantSchedule from './plants/PlantSchedule';
 import CareTasks from './care/CareTasks';
 import Settings from './Settings';
 import LogoutButton from './LogoutButton';
+import AdminDashboard from './admin/AdminDashboard';
 
 import { canCreate, canUpdate, canDelete, isReadOnly } from '../utils/permissions';
 import UsageAnalytics from './UsageAnalytics';
@@ -123,6 +124,14 @@ const Dashboard = () => {
     { name: 'Health Records', icon: <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19 8h-2v3h-3v2h3v3h2v-3h3v-2h-3zM4 6H2v14c0 1.1.9 2 2 2h14v-2H4V6zm16-4H8c-1.1 0-2 .9-2 2v12c0 1.1.9 2 2 2h12c1.1 0 2-.9 2-2V4c0-1.1-.9-2-2-2zm0 14H8V4h12v12z"/></svg> },
     { name: 'Analytics', icon: <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M19 3H5c-1.1 0-2 .9-2 2v14c0 1.1.9 2 2 2h14c1.1 0 2-.9 2-2V5c0-1.1-.9-2-2-2zM9 17H7v-7h2v7zm4 0h-2V7h2v10zm4 0h-2v-4h2v4z"/></svg> }
   ];
+
+  // Add admin dashboard for admin users
+  if (user?.role === 'ADMIN') {
+    sidebarItems.push({
+      name: 'Admin Dashboard',
+      icon: <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 1L3 5v6c0 5.55 3.84 10.74 9 12 5.16-1.26 9-6.45 9-12V5l-9-4z"/></svg>
+    });
+  }
 
   const handleEnvironmentData = (plantId) => {
     setSelectedPlantId(plantId);
@@ -270,6 +279,8 @@ const Dashboard = () => {
           <HealthMonitor plantId={selectedPlantId} userRole={userRole} />
         ) : selectedSidebar === 'Analytics' ? (
           <UsageAnalytics />
+        ) : selectedSidebar === 'Admin Dashboard' ? (
+          <AdminDashboard />
         ) : (
           <p>Data for "{selectedSidebar}" will be shown here.</p>
         )}

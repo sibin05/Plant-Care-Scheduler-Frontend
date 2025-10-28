@@ -6,7 +6,7 @@ const API_URL = "http://localhost:8080/api/auth"; // Spring Boot backend
 export const login = async ({ username, password }) => {
   try {
     const response = await axios.post(`${API_URL}/login`, { username, password });
-    const { accessToken, refreshToken } = response.data;
+    const { accessToken, refreshToken, user } = response.data;
 
     // store tokens
     localStorage.setItem("accessToken", accessToken);
@@ -15,7 +15,7 @@ export const login = async ({ username, password }) => {
     // optional: keep accessToken in sessionStorage too
     sessionStorage.setItem("accessToken", accessToken);
 
-    return response.data;
+    return { accessToken, refreshToken, user };
   } catch (error) {
     throw new Error(error.response?.data?.message || "Login failed.");
   }

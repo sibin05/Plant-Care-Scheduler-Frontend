@@ -20,12 +20,10 @@ const RegisterForm = () => {
 
 
   const roles = [
-    "ADMIN",
     "PLANT_CARE_SPECIALIST",
     "PREMIUM_PLANT_OWNER",
     "STANDARD_PLANT_OWNER",
-    "COMMUNITY_MEMBER",
-    "GUEST",
+    "COMMUNITY_MEMBER"
   ];
 
   const experiences = ["BEGINNER", "INTERMEDIATE", "ADVANCED", "EXPERT"];
