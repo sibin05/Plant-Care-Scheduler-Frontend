@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_URL = "http://localhost:8080/api/auth"; // Spring Boot backend
+const API_URL = "https://plant-care-scheduler-backend.onrender.com/api/auth"; // Spring Boot backend
 
 // Login
 export const login = async ({ username, password }) => {

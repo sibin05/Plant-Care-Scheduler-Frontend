@@ -29,7 +29,7 @@ const AdminGuide = () => {
         </ul>
         
         <div className="note">
-          <strong>Note:</strong> Make sure the backend server is running on http://localhost:8080
+          <strong>Note:</strong> Make sure the backend server is running on https://plant-care-scheduler-backend.onrender.com
         </div>
       </div>
     </div>

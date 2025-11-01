@@ -1,7 +1,7 @@
 import axios from "axios";
 import { authHeader } from "./axiosConfig";
 
-const API_URL = "http://localhost:8080/api/care-tasks";
+const API_URL = "https://plant-care-scheduler-backend.onrender.com/api/care-tasks";
 
 export const getCareTasks = () => {
   return axios.get(API_URL, authHeader());

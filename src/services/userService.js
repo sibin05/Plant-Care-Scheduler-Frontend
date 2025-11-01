@@ -1,6 +1,6 @@
 import { axiosConfig } from './axiosConfig';
 
-const API_URL = 'http://localhost:8080/api/admin';
+const API_URL = 'https://plant-care-scheduler-backend.onrender.com/api/admin';
 
 export const getAllUsers = async () => {
   try {
@@ -23,7 +23,7 @@ export const createUser = async (userData) => {
       location: userData.location,
       timezone: userData.timezone
     };
-    const response = await axiosConfig.post(`http://localhost:8080/api/auth/register`, backendUserData, {
+    const response = await axiosConfig.post(`https://plant-care-scheduler-backend.onrender.com/api/auth/register`, backendUserData, {
       headers: {
         'Content-Type': 'application/json'
       }

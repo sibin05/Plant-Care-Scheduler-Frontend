@@ -71,7 +71,7 @@ const UserManagement = () => {
 
   const testConnection = async () => {
     try {
-      const response = await fetch('http://localhost:8080/api/admin/users', {
+      const response = await fetch('https://plant-care-scheduler-backend.onrender.com/api/admin/users', {
         headers: {
           'Authorization': `Bearer ${localStorage.getItem('accessToken')}`,
           'Content-Type': 'application/json'
